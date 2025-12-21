@@ -1,7 +1,12 @@
-const express = require("express");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const path = require("path");
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Get __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Load environment variables
 dotenv.config();
@@ -52,4 +57,4 @@ app.listen(PORT, HOST, () => {
   console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
 });
 
-module.exports = app;
+export default app;

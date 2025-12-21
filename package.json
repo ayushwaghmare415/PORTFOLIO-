@@ -2,6 +2,7 @@
   "name": "portfolio-website",
   "version": "1.0.0",
   "description": "Responsive portfolio website for Ayush Waghmare - Full Stack Developer",
+  "type": "module",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

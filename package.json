@@ -4,9 +4,13 @@
   "description": "Responsive portfolio website for Ayush Waghmare - Full Stack Developer",
   "main": "index.html",
   "scripts": {
+    "start": "npx http-server -p 8000 -c-1",
     "build": "echo 'No build step required for static site'"
   },
   "keywords": ["portfolio","developer","mern","full-stack"],
   "author": "Ayush Waghmare",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
 }

@@ -4,9 +4,8 @@
   "description": "Responsive portfolio website for Ayush Waghmare - Full Stack Developer",
   "main": "index.html",
   "scripts": {
-    "start": "npx http-server -p 8000",
-    "build": "echo 'No build step required for static site'"
-  },
+  "build": "echo 'No build step required for static site'"
+},
   "keywords": [
     "portfolio",
     "developer",

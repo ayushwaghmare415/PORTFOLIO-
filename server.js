@@ -1,0 +1,53 @@
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const path = require("path");
+
+// Load environment variables
+dotenv.config();
+
+const app = express();
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Serve static files from root directory
+app.use(express.static(__dirname));
+
+// Routes
+app.get("/api/health", (req, res) => {
+  res.status(200).json({ message: "Server is running", status: "OK" });
+});
+
+// Serve portfolio data (optional example)
+app.get("/api/portfolio", (req, res) => {
+  res.status(200).json({
+    name: "Portfolio",
+    projects: []
+  });
+});
+
+// Serve index.html for all other routes (SPA support)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ 
+    message: "Internal Server Error", 
+    error: process.env.NODE_ENV === "development" ? err.message : "" 
+  });
+});
+
+// Start server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
+});
+
+module.exports = app;

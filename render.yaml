@@ -1,8 +1,0 @@
-services:
-  - type: static
-    name: portfolio-website
-    buildCommand: npm run build
-    staticPublishPath: ./
-    envVars:
-      - key: NODE_ENV
-        value: production

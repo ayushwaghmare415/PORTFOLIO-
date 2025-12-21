@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Responsive portfolio website for Ayush Waghmare - Full Stack Developer",
+  "main": "index.html",
+  "scripts": {
+    "dev": "http-server -p 8000 -c-1",
+    "start": "http-server -p 8000 -c-1",
+    "build": "echo 'No build step required for static site'",
+    "serve": "http-server -p 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "developer",
+    "mern",
+    "full-stack"
+  ],
+  "author": "Ayush Waghmare",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
